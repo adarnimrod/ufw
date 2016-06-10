@@ -1,20 +1,21 @@
-Example
-#######
+UFW
+###
 
-An (empty) example Ansible role complete with working tests out of the box. For
-more information read the `blog post
-<https://www.shore.co.il/blog/ansible-example-role/>`_.
+Install UFW, set default policy and allow but limit ssh traffic.
 
 Requirements
 ------------
 
 - `Ansible 2.0 or later <https://www.ansible.com/>`_.
-- `OpenBSD 5.9 or later <http://www.openbsd.org/>`_.
+- `Debian Jessie <http://www.debian.org/>`_ (other versions and Debian based
+  distros should work but aren't tested).
 
 Role Variables
 --------------
 
-None.
+.. code:: yaml
+
+    ufw_policy: reject # Default policy, check ufw module for options.
 
 Dependencies
 ------------
