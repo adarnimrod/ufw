@@ -6,16 +6,12 @@ Install UFW, set default policy and allow but limit ssh traffic.
 Requirements
 ------------
 
-- `Ansible 2.0 or later <https://www.ansible.com/>`_.
-- `Debian Jessie <http://www.debian.org/>`_ (other versions and Debian based
-  distros should work but aren't tested).
+See :code:`meta/main.yml` and assertions at top of :code:`tasks/main.yml`.
 
 Role Variables
 --------------
 
-.. code:: yaml
-
-    ufw_policy: reject # Default policy, check ufw module for options.
+See :code:`defaults/main.yml`.
 
 Dependencies
 ------------

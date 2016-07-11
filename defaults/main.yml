@@ -1,4 +1,4 @@
 ---
 # defaults file for ansible-role-ufw
 
-ufw_policy: reject
+ufw_policy: reject # Default policy, check ufw module for options.
