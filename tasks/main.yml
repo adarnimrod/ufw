@@ -1,7 +1,6 @@
 ---
 # tasks file for ansible-role-ufw
-
-- name: Assert
+- name: Assertions
   assert:
     that: ansible_pkg_mgr == 'apt'
 
