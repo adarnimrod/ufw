@@ -1,4 +1,9 @@
 ---
+- hosts: ufw-xenial
+  gather_facts: false
+  roles: [adarnimrod.debian-bootstrap]
+
 - hosts: all
+  strategy: free
   roles:
-    - role: ansible-role-ufw
+    - role: ufw

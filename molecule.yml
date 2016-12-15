@@ -5,6 +5,10 @@ ansible:
   diff: True
   config_file: ../ansible.cfg
 
+dependency:
+  name: galaxy
+  requirements_file: tests/requirements.yml
+
 vagrant:
   providers:
   - name: virtualbox
@@ -13,7 +17,7 @@ vagrant:
   - name: debian
     box: debian/jessie64
   instances:
-  - name: ansible-role-ufw
+  - name: ufw
     options:
         append_platform_to_hostname: yes
   raw_config_args:
@@ -21,3 +25,17 @@ vagrant:
   - 'vbguest.auto_update = false'
   - 'landrush.enabled = false'
   - 'landrush_ip.override = false'
+
+docker:
+  containers:
+  - name: ufw-jessie
+    image: debian
+    image_version: jessie
+    command: /sbin/init
+    privileged: True
+    volume_mounts:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+    environment:
+        DEBIAN_FRONTEND: noninteractive
+        container: docker
